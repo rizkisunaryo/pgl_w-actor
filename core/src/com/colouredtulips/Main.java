@@ -1,6 +1,7 @@
 package com.colouredtulips;
 
 import com.badlogic.gdx.Game;
+import com.colouredtulips.util.ThirdPartyUtil;
 
 import pgl.screen.Classroom;
 
@@ -9,8 +10,10 @@ import pgl.screen.Classroom;
  */
 public class Main extends Game {
     public static Main main;
-    public static Main getInstance() {
-        return main;
+    public static ThirdPartyUtil thirdPartyUtil;
+
+    public Main(ThirdPartyUtil thirdPartyUtil1) {
+        this.thirdPartyUtil = thirdPartyUtil1;
     }
 
     @Override

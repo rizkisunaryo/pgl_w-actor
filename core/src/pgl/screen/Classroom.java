@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.colouredtulips.BaseScreen;
 import com.colouredtulips.Constants;
+import com.colouredtulips.Main;
 import com.colouredtulips.object.CustomSprite;
 import com.colouredtulips.object.SkeletonAnimation;
 
@@ -72,6 +73,14 @@ public class Classroom extends BaseScreen {
 //        stage.addActor(mainGirl);
         stage.addActor(foregroundGroup);
         foregroundAccelSpeed =5f;
+
+//        mainGirl.addListener(new InputListener(){
+//            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+////                ((MyActor)event.getTarget()).started = true;
+//                ((CustomSprite)event.getTarget()).setPosition(500,500);
+//                return true;
+//            }
+//        });
     }
 
     @Override
@@ -93,20 +102,14 @@ public class Classroom extends BaseScreen {
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
 
-        System.out.println("test: " + mainGirl.getX()+":"+mainGirl.getY());
-
-//        renderer.draw(batch,teacher.getSkeleton());
-
-
-//        renderer.draw(batch,mainGirl.getSkeleton());
-
-//        Gdx.input.vibrate(1000);
         xAccel =-Gdx.input.getAccelerometerY();
         yAccel =Gdx.input.getAccelerometerX();
-//        moveByAcceleration();
+        moveByAcceleration();
+    }
 
-
-
-//        System.out.println(mainGirl.getWidth()+":"+mainGirl.getHeight());
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        Main.thirdPartyUtil.sendGATrackerScreenName("testWithActor");
+        return true;
     }
 }

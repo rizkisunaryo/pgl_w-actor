@@ -35,6 +35,7 @@
   <libs>
     <lib>build/libs/ios/libgdx-box2d.a</lib>
     <lib>build/libs/ios/libgdx.a</lib>
+    <lib>build/libs/ios/libgoogleanalytics.a</lib>
     <lib>build/libs/ios/libObjectAL.a</lib>
   </libs>
   <frameworks>
@@ -45,5 +46,7 @@
     <framework>OpenAL</framework>
     <framework>AudioToolbox</framework>
     <framework>AVFoundation</framework>
+    <framework>CoreData</framework>
+    <framework>SystemConfiguration</framework>
   </frameworks>
 </config>
